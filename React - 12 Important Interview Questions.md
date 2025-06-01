@@ -1956,13 +1956,13 @@ Example:
 
 	Example in CSS:
 
-	'''bash
+```bash
 	@font-face {
 	font-display: swap;
 	font-family: 'Roboto';
 	src: url('Roboto.woff2') format('woff2');
 	}
-	```
+```
 	
 6. Lazy Load Non-Critical Assets
 	- Delay loading of:
