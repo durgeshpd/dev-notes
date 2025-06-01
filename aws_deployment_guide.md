@@ -11,16 +11,21 @@
 ```bash
 ~ git clone <your_repo_url>
 ~ cd <your_project_directory>
+```
 
 2. 🛠️ Backend Setup
 Navigate to your backend folder:
 ```bash
 ~ cd <backend-folder-name>
+```
 
 Create a .env file:
 
+```bash
 ~ nano .env
+```
 
+```bash
 Example contents:
 
 MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/<dbname>?retryWrites=true&w=majority
