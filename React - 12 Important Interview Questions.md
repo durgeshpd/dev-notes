@@ -95,9 +95,10 @@ Syntax:
 	useEffect(() => {
 	// side effect code here
 	}, [dependencies]);
+```
 
-	Example:
- 	```bash
+Example:
+ ```bash
 	import React, { useState, useEffect } from 'react';
 
 	function Timer() {
