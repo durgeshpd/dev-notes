@@ -1715,7 +1715,7 @@ A. React Memoization:
 	- When a component is wrapped with React.memo, it will only re-render if its props change. This is useful for functional components that receive the same props multiple times.
 
 Example:
-'''bash
+```bash
 	import React from 'react';
 
 	const MyComponent = React.memo(({ name }) => {
@@ -1732,7 +1732,7 @@ B. PureComponent:
 	- PureComponent: In class-based components, PureComponent is similar to React.memo. It performs a shallow comparison of props and state, and only re-renders when there are changes.
 
 Example:
-'''bash
+```bash
 	import React, { PureComponent } from 'react';
 
 	class MyComponent extends PureComponent {
@@ -1749,7 +1749,7 @@ Example:
 C. UseCallback and UseMemo Hooks:
 	- useCallback: This hook returns a memoized version of a function, preventing unnecessary function re-creations during re-renders.
 
-'''bash
+```bash
 	import React, { useState, useCallback } from 'react';
 
 	function ParentComponent() {
@@ -1777,7 +1777,7 @@ C. UseCallback and UseMemo Hooks:
 	
 	- useMemo: This hook is used to memoize values that are computationally expensive to avoid recalculating them on every render.
 
-'''bash
+```bash
 	import React, { useMemo, useState } from 'react';
 
 	function ExpensiveComputationComponent() {
@@ -1809,7 +1809,7 @@ D. Lazy Loading and Code Splitting:
 	React.lazy allows you to dynamically import components only when they're required.
 
 Example:
-'''bash	
+```bash	
 	import React, { Suspense, lazy } from 'react';
 
 	const MyComponent = lazy(() => import('./MyComponent'));
@@ -1834,7 +1834,7 @@ E. Virtualization (Windowing):
 
 Example:
 
-'''bash
+```bash
 	import { FixedSizeList as List } from 'react-window';
 
 	function VirtualizedList({ items }) {
@@ -1867,7 +1867,7 @@ G. Throttling and Debouncing:
 
 Example of Debouncing (with useEffect and setTimeout):
 
-'''bash
+```bash
 	import React, { useState, useEffect } from 'react';
 
 	function SearchComponent() {
