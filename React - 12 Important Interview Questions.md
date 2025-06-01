@@ -18,8 +18,9 @@ React - 12 Important Interview Questions
         1. The current state value
         2. A function to update that value
 
-    Example:
-    ```bash 
+Example:
+
+```bash 
     import React, { useState } from 'react';
 
     function Counter() {
@@ -34,7 +35,7 @@ React - 12 Important Interview Questions
         </div>
       );
     }
-    ```
+```
 
 ==> Common Interview Follow-up Questions for useState:
 
