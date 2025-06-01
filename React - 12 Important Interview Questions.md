@@ -303,6 +303,62 @@ A:
 	- Complex updates (e.g., reset, undo, nested updates)
 ✅ Cleaner than multiple useState calls in large components.
 
+Q: Can you build a React component that fetches user data from a public JSON API using useEffect, displays a list of user names and emails, and allows the list to be filtered by a search input?
+A: 
+
+```bash
+import React, { useState, useEffect } from 'react';
+
+function UserList() {
+  const [users, setUsers] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      const data = await response.json();
+      setUsers(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  fetchData();
+}, []);
+
+
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    user.email.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div style={{ padding: '20px', fontFamily: 'Arial' }}>
+      <h2>User List</h2>
+      <input
+        type="text"
+        placeholder="Search by name or email..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{ padding: '8px', marginBottom: '20px', width: '100%' }}
+      />
+      <ul>
+        {filteredUsers.map((user) => (
+          <li key={user.id} style={{ marginBottom: '10px' }}>
+            <strong>{user.name}</strong> — {user.email}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default UserList;
+
+
+```
+
 Example:
 ```bash
 function reducer(state, action) {
