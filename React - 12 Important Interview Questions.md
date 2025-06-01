@@ -13,10 +13,10 @@ React - 12 Important Interview Questions
 	- The most commonly used hooks are useState() and useEffect().
 
 (1) useState()
-    - useState is a React Hook that lets you add state to a function component.
-    - It returns an array with two values:
-        1. The current state value
-        2. A function to update that value
+- useState is a React Hook that lets you add state to a function component.
+- It returns an array with two values:
+        - The current state value
+  	- A function to update that value
 
 Example:
 
@@ -81,7 +81,7 @@ Example:
 
 
 (2) useEffect()
-	- useEffect is a React Hook that lets you run side effects in function components.
+- useEffect is a React Hook that lets you run side effects in function components.
 	- Side effects include:
 		- Fetching data
 		- Updating the DOM manually
@@ -89,8 +89,9 @@ Example:
 		- Logging
 	- It runs after the component renders.
 
-	Syntax:
- 	```bash
+Syntax:
+
+ ```bash
 	useEffect(() => {
 	// side effect code here
 	}, [dependencies]);
@@ -113,7 +114,7 @@ Example:
 
 	return <h1>{count}</h1>;
 	}
- 	```
+ ```
 
 ==> Common Interview Follow-up Questions for useEffect:
 
@@ -143,8 +144,9 @@ Example:
 7. Can I use async/await in useEffect?
 - Not directly. You should define an async function inside the effect and call it.
 
-	Example:
-	```bash
+Example:
+
+```bash
 	useEffect(() => {
 	const fetchData = async () => {
 		const res = await fetch(url);
@@ -153,7 +155,7 @@ Example:
 	};
 	fetchData();
 	}, []);
- 	```
+```
 
 8. Can you have multiple useEffect() in one component?
 - ✅ Yes. Each useEffect is independent.
@@ -167,15 +169,15 @@ Example:
 
 (3) useContext()
 	- Accesses values from React Context (avoids props drilling).
-	📌 Syntax:
+📌 Syntax:
  
-	```bash
+```bash
 	const value = useContext(MyContext);
- 	```
+```
 	
-	✅ Example:
+✅ Example:
  
- 	```bash
+ ```bash
 	const ThemeContext = React.createContext("light");
 
 	function App() {
@@ -190,7 +192,7 @@ Example:
 	const theme = useContext(ThemeContext);
 	return <div>Theme is {theme}</div>;
 	}
- 	```
+```
 	
 (4) useRef()
 	- Creates a mutable reference that doesn’t trigger re-renders.
@@ -199,8 +201,8 @@ Example:
 	- Accessing DOM nodes (inputRef.current.focus())
 	- Keeping values between renders (like prevValue)
 
-	📌 Example:
- 	```bash
+📌 Example:
+ ```bash
 
 	const inputRef = useRef();
 
@@ -209,35 +211,36 @@ Example:
 	}, []);
 
 	return <input ref={inputRef} />;
- 	```
+ ```
 	
 (5) useMemo()
 	- Memoizes the result of a calculation — used to avoid re-computing expensive functions on every render.
 
-	📌 Example:
- 	```bash
+📌 Example:
+ ```bash
 
 	const expensiveValue = useMemo(() => {
 	return heavyCalculation(num);
 	}, [num]);
- 	```
+ ```
 	
 (6) useCallback()
 	- Memoizes a function — avoids creating a new function on every render.
 
-	📌 Example:
- 	```bash
+📌 Example:
+ ```bash
 
 	const handleClick = useCallback(() => {
 	console.log("Clicked");
 	}, []);
+ ```
 	
 7. useReducer()
 
 	- Like useState, but for complex state logic (similar to Redux reducer).
 
-	📌 Example:
-	```bash
+📌 Example:
+```bash
 
 	function reducer(state, action) {
 	switch (action.type) {
@@ -249,7 +252,7 @@ Example:
 	}
 
 	const [state, dispatch] = useReducer(reducer, { count: 0 });
- 	```
+```
 
 📌 Section: Commonly Asked Hooks Q&A
 
@@ -273,8 +276,9 @@ A: Use it to optimize performance by caching the result of a heavy calculation. 
 	- Expensive calculations
 	- Preventing unnecessary renders
 
- 	```bash
+ ```bash
 	const expensiveValue = useMemo(() => computeValue(num), [num]);
+ ```
 	
 🔹 useCallback
 Q: What is useCallback and why use it?
@@ -283,12 +287,12 @@ A: useCallback returns a memoized version of a function. Useful to prevent unnec
 	- Passing stable function references to optimized child components
 	- Preventing re-renders caused by new function identities on every render
 
- 	```bash
+ ```bash
 
 	const handleClick = useCallback(() => {
 	console.log("Clicked");
 	}, []);
- 	```
+ ```
 	
 🔹 useReducer
 Q: Why use useReducer over useState?
@@ -320,9 +324,9 @@ What is the DOM?
 	- **DOM (Document Object Model)**: A tree structure that represents HTML elements in memory.
 	- It's how the browser represents the web page, allowing interaction with its content.
 
-	**Example of DOM structure:**
+**Example of DOM structure:**
 
-	```bash
+```bash
 	<html>
 	<head>
 		<title>Page Title</title>
@@ -333,7 +337,7 @@ What is the DOM?
 		</div>
 	</body>
 	</html>
-	```
+```
 	
 What is the Virtual DOM?
 	- Virtual DOM: A lightweight copy of the real DOM kept in memory by React.
@@ -421,7 +425,7 @@ Example of Counter Component
 
 Class Component:
 
-	```bash
+```bash
 	import React, { Component } from 'react';
 
 	class CounterClass extends Component {
@@ -453,12 +457,12 @@ Class Component:
 	}
 
 	export default CounterClass;
-	```
+```
 	
 	
 Function Component with Hooks:
 
-	```bash
+```bash
 	import React, { useState, useEffect } from 'react';
 
 	function CounterFunction() {
@@ -483,7 +487,7 @@ Function Component with Hooks:
 	}
 
 	export default CounterFunction;
-	```
+```
 	
 	
 Component Lifecycle Phases
@@ -563,7 +567,7 @@ This component is used to handle the loading state (like a loading spinner) whil
 React Lazy Loading Example:
 Step 1: Using React.lazy() for Lazy Loading Components
 
-	```bash
+```bash
 	import React, { Suspense } from 'react';
 
 	// Lazy load the component
@@ -583,7 +587,7 @@ Step 1: Using React.lazy() for Lazy Loading Components
 	}
 
 	export default App;
-	```
+```
 	
 Explanation:
 React.lazy():
@@ -597,7 +601,7 @@ While MyComponent is being loaded, the fallback component (<div>Loading...</div>
 Step 2: Lazy Loading Routes with React Router (optional)
 If you're using React Router and want to lazily load routes, you can combine React.lazy() with Suspense.
 
-	```bash
+```bash
 
 	import React, { Suspense } from 'react';
 	import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -625,7 +629,7 @@ If you're using React Router and want to lazily load routes, you can combine Rea
 	}
 
 	export default App;
-	```
+```
 	
 Explanation:
 React.lazy() is used to load Home and About components only when their respective routes are visited.
@@ -686,7 +690,7 @@ Key Takeaways about Lazy Loading:
 
 📦 Example: Custom Hook – useOnlineStatus
 
-	```bash
+```bash
 	// useOnlineStatus.js
 	import { useState, useEffect } from 'react';
 
@@ -709,12 +713,12 @@ Key Takeaways about Lazy Loading:
 	}
 
 	export default useOnlineStatus;
-	```
+```
 
 
 How to use it in a component:
 
-	```bash
+```bash
 
 	import React from 'react';
 	import useOnlineStatus from './useOnlineStatus';
@@ -744,17 +748,18 @@ How to use it in a component:
 	}
 
 	export default App;
-	```
+```
 
 	
 🔄 Other Real-life Examples of Custom Hooks
 
-Custom Hook			Description
-useFetch()			For fetching API data
-useForm()			For managing form state and handlers
-useDebounce()		For debouncing input (e.g. search box)
-useLocalStorage()	Sync state with localStorage
-useTimer()			Custom timers/countdowns
+| Custom Hook		| Description                            |
+|-----------------------|----------------------------------------|
+| useFetch()		| For fetching API data                  |
+| useForm()		| For managing form state and handlers   |
+| useDebounce()		| For debouncing input (e.g. search box) |
+| useLocalStorage()	| Sync state with localStorage           |
+| useTimer()		| Custom timers/countdowns               |
 
 🤔 Common Interview Follow-up Questions for Custom Hooks
 
@@ -813,18 +818,18 @@ Use HOCs when:
 
 A HOC is a function like this:
 
-	```bash
+```bash
 	const withExtraInfo = (WrappedComponent) => {
 	return function EnhancedComponent(props) {
 		// You can add logic here
 		return <WrappedComponent {...props} />;
 	};
 	};
-	```
+```
 	
 🔧 Example: A Simple HOC that Adds a Message
 
-	```bash
+```bash
 	// withMessage.js
 	import React from 'react';
 
@@ -840,11 +845,11 @@ A HOC is a function like this:
 	}
 
 	export default withMessage;
-	```
+```
 	
 Original Component:
 
-	```bash
+```bash
 	// Hello.js
 	import React from 'react';
 
@@ -853,11 +858,11 @@ Original Component:
 	}
 
 	export default Hello;
-	```
+```
 	
 Use the HOC:
 
-	```bash
+```bash
 	// App.js
 	import React from 'react';
 	import Hello from './Hello';
@@ -874,7 +879,7 @@ Use the HOC:
 	}
 
 	export default App;
-	```
+```
 	
 	🧾 Output:
 
@@ -923,18 +928,19 @@ How is HOC different from Render Props or Hooks?
 	- State is data that changes over time inside a component.
 	- It's managed using the useState hook (or this.state in class components).
 	- When state updates, the component re-renders.
-
+```bash
 	const [count, setCount] = useState(0);
+```
 	
 ✅ What are Props?
 	- Props (properties) are read-only data passed from parent to child components.
 	- They are used to send data or functions between components.
 
-	```bash
+```bash
 	function Greeting({ name }) {
 	return <p>Hello, {name}!</p>;
 	}
-	```
+```
 	
 🆚 Difference: State vs Props
 
@@ -950,8 +956,8 @@ How is HOC different from Render Props or Hooks?
 	- Props drilling is when you pass props through many layers of components, even if only the bottom component needs the data.
 	- This makes code hard to maintain and deeply nested.
 
-	Example:
-	```bash
+Example:
+```bash
 	<App>
 	<Parent>
 		<Child>
@@ -959,7 +965,7 @@ How is HOC different from Render Props or Hooks?
 		</Child>
 	</Parent>
 	</App>
-	```
+```
 	
 	Here, someData is passed through all levels just to reach GrandChild.
 
@@ -973,16 +979,16 @@ Context provides a way to share state or data globally without passing props man
 🏗️ How to Create and Use Context
 1. Create the Context:
 
-	```bash
+```bash
 	import React, { createContext } from 'react';
 
 	const UserContext = createContext();
 	export default UserContext;
-	```
+```
 	
 2. Provide Context (wrap your app or part of it):
 
-	```bash
+```bash
 	import UserContext from './UserContext';
 
 	function App() {
@@ -994,11 +1000,11 @@ Context provides a way to share state or data globally without passing props man
 		</UserContext.Provider>
 	);
 	}
-	```
+```
 	
 3. Use Context in any child component:
 
-	```bash
+```bash
 	import React, { useContext } from 'react';
 	import UserContext from './UserContext';
 
@@ -1006,7 +1012,7 @@ Context provides a way to share state or data globally without passing props man
 	const user = useContext(UserContext);
 	return <h1>Welcome, {user}</h1>;
 	}
-	```
+```
 	
 🧠 When to Use Context?
 
@@ -1083,21 +1089,22 @@ useDispatch	Send actions from a component to change state
 📦 Example: Redux Counter App (Simple)
 
 1. Install Redux and React-Redux
-	```bash
+   
+```bash
 	npm install redux react-redux
-	```
+```
 	
 2. Create Action
 
-	```bash
+```bash
 	// actions.js
 	export const increment = () => ({ type: 'INCREMENT' });
 	export const decrement = () => ({ type: 'DECREMENT' });
-	```
+```
 	
 3. Create Reducer
 
-	```bash
+```bash
 	// reducer.js
 	const initialState = { count: 0 };
 
@@ -1113,22 +1120,22 @@ useDispatch	Send actions from a component to change state
 	}
 
 	export default counterReducer;
-	```
+```
 	
 4. Create Store
 
-	```bash
+```bash
 	// store.js
 	import { createStore } from 'redux';
 	import counterReducer from './reducer';
 
 	const store = createStore(counterReducer);
 	export default store;
-	```
+```
 	
 5. Provide Store to App
 
-	```bash
+```bash
 	// index.js
 	import React from 'react';
 	import ReactDOM from 'react-dom';
@@ -1142,11 +1149,11 @@ useDispatch	Send actions from a component to change state
 	</Provider>,
 	document.getElementById('root')
 	);
-	```
+```
 	
 6. Use Redux in Component
 
-	```bash
+```bash
 	// App.js
 	import React from 'react';
 	import { useSelector, useDispatch } from 'react-redux';
@@ -1166,7 +1173,7 @@ useDispatch	Send actions from a component to change state
 	}
 
 	export default App;
-	```
+```
 	
 ✅ Summary of Redux Flow:
 	- Dispatch an action from UI
@@ -1254,13 +1261,14 @@ Async		Middleware support			No built-in support
 
 🆚 SSR vs CSR – Quick Comparison
 
-Feature				CSR (Client-Side)	SSR (Server-Side)
-First Load Speed	Slower				Faster
-SEO Support			Poor				Excellent
-Server Load			Low					High
-Setup				Easy (CRA)			Needs SSR-ready framework (Next.js)
-Interactivity		After JS loads		After hydration
-Use Case		Dashboards, SPAs		Blogs, E-commerce, News sites
+| Feature		| CSR (Client-Side)	| SSR (Server-Side)                   |
+|-----------------------|-----------------------|-------------------------------------|
+| First Load Speed	| Slower		| Faster                              |
+| SEO Support		| Poor			| Excellent                           |
+| Server Load		| Low			| High				      |
+| Setup			| Easy (CRA)		| Needs SSR-ready framework (Next.js) |
+| Interactivity		| After JS loads	| After hydration                     |
+| Use Case		| Dashboards, SPAs	| Blogs, E-commerce, News sites       |
 
 🤔 Common Interview Questions:
 
@@ -1305,7 +1313,7 @@ Types of Routing
 
 	Basic Routing Setup (React Router)
 
-	```bash
+```bash
 	import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 	function App() {
@@ -1318,7 +1326,7 @@ Types of Routing
 		</Router>
 	);
 	}
-	```
+```
 	
 2. Role-Based Access Control (RBAC) with Routing
 
@@ -1328,11 +1336,11 @@ Types of Routing
 
 	Example:
 
-	```bash
+```bash
 	<Route path="/admin" render={() => (
 	userRole === 'admin' ? <AdminPage /> : <Redirect to="/login" />
 	)} />
-	```
+```
 	
 3. Common Challenges in React Routing
 
@@ -1389,17 +1397,18 @@ Types of Routing
 
 Summary of Key Challenges
 
-Challenge						Example Problem								Solution
-Route Protection	        	Unauthorized users accessing routes			Use ProtectedRoute or Redirect
-Role-Based Access Control		Only admin should access /admin				Check user role before rendering
-Deep Linking & Refresh	    	404 when refreshing on deep URLs			Configure server to handle all routes
-Dynamic Routing					Routes with dynamic parameters (/user/:id)	Use useParams()
-Nested Routing					Handling deeply nested routes				Use Outlet for child routes
-Performance / Code Splitting	Slow load times due to large JS files		Use React.lazy() and Suspense
-SEO & Crawling					Content not indexed by search engines		Use SSR or static pre-rendering
-Breadcrumbs / Navigation		Dynamic breadcrumbs for nested routes		Centralized route configuration
-Route Configuration				Managing many routes						Use centralized configuration
-Transition Animations			Animating between routes					Use Framer Motion or CSS transitions
+| Challenge			| Example Problem				| Solution                              |
+|-------------------------------|-----------------------------------------------|---------------------------------------|
+| Route Protection	        | Unauthorized users accessing routes		| Use ProtectedRoute or Redirect        |
+| Role-Based Access Control	| Only admin should access /admin		| Check user role before rendering      |
+| Deep Linking & Refresh	| 404 when refreshing on deep URLs		| Configure server to handle all routes |
+| Dynamic Routing		| Routes with dynamic parameters (/user/:id)	| Use useParams()                       |
+| Nested Routing		| Handling deeply nested routes			| Use Outlet for child routes           |
+| Performance / Code Splitting	| Slow load times due to large JS files		| Use React.lazy() and Suspense         |
+| SEO & Crawling		| Content not indexed by search engines		| Use SSR or static pre-rendering       |
+| Breadcrumbs / Navigation	| Dynamic breadcrumbs for nested routes		|Centralized route configuration        |
+| Route Configuration		| Managing many routes				| Use centralized configuration         |
+| Transition Animations		| Animating between routes			| Use Framer Motion or CSS transitions  |
 
 React Interview Questions: Routing, RBAC, and Challenges
 
@@ -1415,7 +1424,7 @@ What is the difference between Client-Side Routing (CSR) and Server-Side Routing
 How do you create routes in React?
 	- You can create routes using <Route> and wrap your app with <Router>. Here's a basic example:
 
-	```bash
+```bash
 	import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 	function App() {
@@ -1428,7 +1437,7 @@ How do you create routes in React?
 		</Router>
 	);
 	}
-	```
+```
 
 What is useParams() in React Router?
 	- useParams() is a hook that returns the dynamic parameters from the URL, such as id in a URL like /user/:id.
@@ -1443,20 +1452,20 @@ What is RBAC (Role-Based Access Control)?
 How would you implement RBAC in React Routing?
 	- You can create a PrivateRoute or ProtectedRoute that checks the user’s role before rendering a route. If the user doesn’t have permission, they are redirected to a login or unauthorized page.
 
-	```bash
+```bash
 	const ProtectedRoute = ({ role, allowedRole, children }) => {
 	return role === allowedRole ? children : <Redirect to="/login" />;
 	};
-	```
+```
 	
 Can you give an example of a Route protection for admin users?
 	- Here’s an example of restricting access to a route based on the user's role:
 
-	```bash
+```bash
 	<Route path="/admin" render={() => (
 	userRole === 'admin' ? <AdminPage /> : <Redirect to="/login" />
 	)} />
-	```
+```
 	
 Why is RBAC important in React apps?
 	- It ensures that sensitive or restricted pages (like admin dashboards) are accessible only to authorized users, protecting application data and security.
@@ -1473,20 +1482,20 @@ What is the challenge with refreshing deep URLs (like /dashboard/settings)?
 How do you manage deeply nested routes in React?
 	- Deeply nested routes can be handled using <Route> components, or with Outlet in React Router v6 for better nested route management.
 
-	Example:
+Example:
 
-	```bash
+```bash
 	<Route path="/admin" element={<AdminLayout />}>
 	<Route path="settings" element={<SettingsPage />} />
 	</Route>
-	```
+```
 	
 How do you implement dynamic routes in React?
 	- You can implement dynamic routes by using URL parameters (e.g., /user/:id), and then extract parameters using the useParams() hook.
 
-	```bash
+```bash
 	const { id } = useParams();
-	```
+```
 	
 What are the challenges related to performance when dealing with routing?
 	- The large initial bundle size can slow down loading time.
@@ -1519,20 +1528,20 @@ How do you prevent users from accessing routes after they log out?
 
 	You can use Promises to handle asynchronous tasks like fetching data from an API.
 
-	```bash
+```bash
 	useEffect(() => {
 	fetch('https://api.example.com/data')
 		.then(response => response.json())
 		.then(data => setData(data))
 		.catch(error => console.error('Error:', error));
 	}, []);
-	```
+```
 	
 	- Async/Await:
 
 	async/await makes it easier to handle asynchronous code and looks more like synchronous code. It improves readability and error handling.
 
-	```bash
+```bash
 	import { useState, useEffect } from 'react';
 	function DataFetcher() {
 	const [data, setData] = useState(null);
@@ -1561,7 +1570,7 @@ How do you prevent users from accessing routes after they log out?
 	}
 
 	export default DataFetcher;
-	```
+```
 	
 3. What is useEffect for Async Operations?
 	- useEffect() is often used for asynchronous tasks in React.
@@ -1573,7 +1582,7 @@ How do you prevent users from accessing routes after they log out?
 
 	Example with Promise.all():
 
-	```bash
+```bash
 	import { useState, useEffect } from 'react';
 	function MultipleAPIFetch() {
 	const [data, setData] = useState(null);
@@ -1602,7 +1611,7 @@ How do you prevent users from accessing routes after they log out?
 	}
 
 	export default MultipleAPIFetch;
-	```
+```
 	
 5. Handling Loading States and Error States in Async Tasks
 	When performing asynchronous operations, it’s important to handle loading states and errors. Here’s how you can handle them in React:
@@ -1610,7 +1619,7 @@ How do you prevent users from accessing routes after they log out?
 	- Loading State: Show a loading spinner or a message while the asynchronous task is in progress.
 	- Error State: Show a meaningful error message if the API request fails.
 
-	```bash
+```bash
 	import { useState, useEffect } from 'react';
 
 	function AsyncComponent() {
@@ -1641,7 +1650,7 @@ How do you prevent users from accessing routes after they log out?
 	}
 
 	export default AsyncComponent;
-	```
+```
 	
 6. Error Boundaries for Async Operations
 	- React allows you to handle errors during rendering, in lifecycle methods, and in constructors of the whole tree using Error Boundaries.
@@ -1649,7 +1658,7 @@ How do you prevent users from accessing routes after they log out?
 
 	Example of an Error Boundary:
 
-	```bash
+```bash
 	class ErrorBoundary extends React.Component {
 	constructor(props) {
 		super(props);
@@ -1677,17 +1686,18 @@ How do you prevent users from accessing routes after they log out?
 	<ErrorBoundary>
 	<AsyncComponent />
 	</ErrorBoundary>
-	```
+```
 	
 7. Common Interview Questions on Async Tasks in React
 
-Question													Answer
-What is an async task in React?								Async tasks are tasks like fetching data or performing side-effects in React using Promises or async/await.
-How do you fetch data asynchronously in React?				Use the useEffect hook with async/await or then() for promises.
-What is useEffect and how does it work with async tasks?	useEffect is a hook that runs after component renders, perfect for async tasks like data fetching.
-How do you handle multiple async operations?				Use Promise.all() to handle multiple API calls simultaneously.
-What is a loading state in React and how do you handle it?	A loading state indicates that data is being fetched. You can handle it by using a loading state variable.
-What is the purpose of Error Boundaries in async tasks?		Error Boundaries are used to catch errors in React components and prevent the app from crashing.
+| Question							| Answer                                                                                                      |
+|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| What is an async task in React?				| Async tasks are tasks like fetching data or performing side-effects in React using Promises or async/await. |
+| How do you fetch data asynchronously in React?		| Use the useEffect hook with async/await or then() for promises.                                             |
+| What is useEffect and how does it work with async tasks?	| useEffect is a hook that runs after component renders, perfect for async tasks like data fetching.          |
+| How do you handle multiple async operations?			| Use Promise.all() to handle multiple API calls simultaneously.                                              |
+| What is a loading state in React and how do you handle it?	| A loading state indicates that data is being fetched. You can handle it by using a loading state variable.  |
+| What is the purpose of Error Boundaries in async tasks?	| Error Boundaries are used to catch errors in React components and prevent the app from crashing.            |
 
 
 12. Performance Optimization in React
@@ -1703,8 +1713,8 @@ A. React Memoization:
 	- React.memo: React provides React.memo to memoize functional components and prevent unnecessary re-renders.
 	- When a component is wrapped with React.memo, it will only re-render if its props change. This is useful for functional components that receive the same props multiple times.
 
-	Example:
-	'''bash
+Example:
+'''bash
 	import React from 'react';
 
 	const MyComponent = React.memo(({ name }) => {
@@ -1713,15 +1723,15 @@ A. React Memoization:
 	});
 
 	export default MyComponent;
-	```
+```
 	
 When to use: Use React.memo for components that receive static or unchanged props.
 
 B. PureComponent:
 	- PureComponent: In class-based components, PureComponent is similar to React.memo. It performs a shallow comparison of props and state, and only re-renders when there are changes.
 
-	Example:
-	'''bash
+Example:
+'''bash
 	import React, { PureComponent } from 'react';
 
 	class MyComponent extends PureComponent {
@@ -1731,14 +1741,14 @@ B. PureComponent:
 	}
 
 	export default MyComponent;
-	```
+```
 	
 	When to use: Use PureComponent when you want a class-based component to re-render only when its props or state change.
 
 C. UseCallback and UseMemo Hooks:
 	- useCallback: This hook returns a memoized version of a function, preventing unnecessary function re-creations during re-renders.
 
-	'''bash
+'''bash
 	import React, { useState, useCallback } from 'react';
 
 	function ParentComponent() {
@@ -1762,11 +1772,11 @@ C. UseCallback and UseMemo Hooks:
 	}
 
 	export default ParentComponent;
-	```
+```
 	
 	- useMemo: This hook is used to memoize values that are computationally expensive to avoid recalculating them on every render.
 
-	'''bash
+'''bash
 	import React, { useMemo, useState } from 'react';
 
 	function ExpensiveComputationComponent() {
@@ -1786,7 +1796,7 @@ C. UseCallback and UseMemo Hooks:
 	}
 
 	export default ExpensiveComputationComponent;
-	```
+```
 	
 When to use:
 
@@ -1797,8 +1807,8 @@ D. Lazy Loading and Code Splitting:
 	- Lazy Loading: Lazy loading involves loading parts of the application only when needed. This reduces the initial load time of the app.
 	React.lazy allows you to dynamically import components only when they're required.
 
-	Example:
-	'''bash	
+Example:
+'''bash	
 	import React, { Suspense, lazy } from 'react';
 
 	const MyComponent = lazy(() => import('./MyComponent'));
@@ -1812,7 +1822,7 @@ D. Lazy Loading and Code Splitting:
 	}
 
 	export default App;
-	```
+```
 	
 	- Code Splitting: Code splitting allows you to divide your code into smaller chunks. React supports this using React.lazy and React.Suspense.
 
@@ -1823,7 +1833,7 @@ E. Virtualization (Windowing):
 
 Example:
 
-	'''bash
+'''bash
 	import { FixedSizeList as List } from 'react-window';
 
 	function VirtualizedList({ items }) {
@@ -1837,15 +1847,17 @@ Example:
 	}
 
 	export default VirtualizedList;
-	```
+```
 	
 When to use: Use virtualization for large datasets to optimize performance by only rendering the visible items.
 
 F. Avoiding Inline Functions and Objects:
 	- Inline Functions: Each time a component renders, an inline function is created, which can cause unnecessary re-renders of child components.
 
+```bash
 	// Bad: Inline function
 	<ChildComponent onClick={() => doSomething()} />
+```
 	
 Fix: Define the function outside the JSX or use useCallback to memoize it.
 
@@ -1854,7 +1866,7 @@ G. Throttling and Debouncing:
 
 Example of Debouncing (with useEffect and setTimeout):
 
-	'''bash
+'''bash
 	import React, { useState, useEffect } from 'react';
 
 	function SearchComponent() {
@@ -1883,7 +1895,7 @@ Example of Debouncing (with useEffect and setTimeout):
 	}
 
 	export default SearchComponent;
-	```
+```
 	
 H. 🧩 Asset Optimization
 
@@ -1919,10 +1931,10 @@ H. 🧩 Asset Optimization
 		- React.lazy() + Suspense
 		- dynamic import() with route-based components
 
-	Example:
-	```bash
+Example:
+```bash
 	const About = React.lazy(() => import('./About'));
-	```
+```
 	
 3. Image Optimization
 	- Use .webp or .avif formats (smaller & faster)
@@ -1963,12 +1975,13 @@ H. 🧩 Asset Optimization
 	
 🧪 Interview Questions on Asset Optimization
 
-Question											Answer
-What is asset optimization?							Reducing the size and number of static files like JS, CSS, images to improve performance.
-How do you optimize images in React?				Convert to modern formats (WebP), use lazy loading, and resize images.
-What is code splitting in React?					Breaking JS bundles into smaller chunks and loading them only when needed.
-How do you handle fonts for better performance?		Use modern formats (WOFF2), only load necessary weights, and set font-display: swap.
-How does CRA handle asset optimization?				create-react-app minifies, compresses, and splits code during npm run build.
+| Question						| Answer                                                                                    |
+|-------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| What is asset optimization?				| Reducing the size and number of static files like JS, CSS, images to improve performance. |
+| How do you optimize images in React?			| Convert to modern formats (WebP), use lazy loading, and resize images.                    |
+| What is code splitting in React?			| Breaking JS bundles into smaller chunks and loading them only when needed.                |
+| How do you handle fonts for better performance?	| Use modern formats (WOFF2), only load necessary weights, and set font-display: swap.      |
+| How does CRA handle asset optimization?		| create-react-app minifies, compresses, and splits code during npm run build.              |
 
 🚀 Final Key Takeaways
 
