@@ -303,6 +303,20 @@ A:
 	- Complex updates (e.g., reset, undo, nested updates)
 ✅ Cleaner than multiple useState calls in large components.
 
+Example:
+```bash
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    default:
+      return state;
+  }
+}
+
+const [state, dispatch] = useReducer(reducer, { count: 0 });
+```
+
 Q: Can you build a React component that fetches user data from a public JSON API using useEffect, displays a list of user names and emails, and allows the list to be filtered by a search input?
 A: 
 
@@ -357,20 +371,6 @@ useEffect(() => {
 export default UserList;
 
 
-```
-
-Example:
-```bash
-function reducer(state, action) {
-  switch (action.type) {
-    case 'increment':
-      return { count: state.count + 1 };
-    default:
-      return state;
-  }
-}
-
-const [state, dispatch] = useReducer(reducer, { count: 0 });
 ```
 
 
