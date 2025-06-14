@@ -1,7 +1,5 @@
 ## ✅ Step-by-Step Git Workflow with Proper Commit Messages
 
----
-
 1. 🧱 Initialize Git Repository
 
 ```bash
@@ -56,7 +54,7 @@ git commit -m "feat: show basic Profile information"
 
 # Premium
 git add src/components/Premium.jsx
-git commit -m "feat: add placeholder Premium section"
+git commit -m "feat: add Premium membership component with plans"
 ```
 ---
 
