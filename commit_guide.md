@@ -60,6 +60,39 @@ git commit -m "feat: add placeholder Premium section"
 ```
 ---
 
+🕔 What If a Component Is Incomplete at Day-End?
+Sometimes you start building a component (e.g. Premium.jsx), but don’t finish it before the day ends. Here’s what to do:
+
+✅ Option 1: Save Work as WIP (Work in Progress)
+```bash
+git add src/components/Premium.jsx
+git commit -m "wip: start building Premium component layout"
+```
+✅ Safe for local commits. Don’t push this to main.
+
+✅ Option 2: Use a Feature Branch (Team-friendly)
+```bash
+git checkout -b feat/premium-component
+git add src/components/Premium.jsx
+git commit -m "wip: scaffold Premium component layout"
+```
+➡️ Later, when it's done:
+
+```bash
+git commit -m "feat: complete Premium component with UI and logic"
+git checkout main
+git merge feat/premium-component
+```
+✅ Option 3: Use Git Stash (No Commit)
+```bash
+git stash push -m "incomplete Premium component"
+# Next time
+git stash pop
+```
+🧠 Rule of Thumb: Always save your progress (via WIP, branch, or stash) — never leave work untracked overnight.
+
+---
+
 5. 🧠 Redux + Utilities
 ```bash
 # Configure Redux Store
