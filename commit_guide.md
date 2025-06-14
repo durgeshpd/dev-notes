@@ -89,46 +89,63 @@ git push -u origin main
 ```
 
 🧠 Smart Commit Message Patterns by Situation
+
 🔐 Login & Auth
+
 Situation	Commit Message
+
 Form + validation	feat: build Login form with input validation
 Auth integration	feat: connect login form to authentication API
 Handle errors	feat: display login error messages from API
 Fix login bug	fix: resolve issue where login fails with valid credentials
 
 🖼️ UI & Layout
+
 Situation	Commit Message
+
 New layout	feat: implement two-column layout for dashboard
 Style fix	style: fix alignment of profile card
 Mobile view	feat: make Feed component responsive on mobile
 
 ⚙️ Redux State
+
 Situation	Commit Message
+
 Create slice	feat: add requestSlice for managing friend requests
 Update reducer	fix: correct state mutation bug in userSlice
 
 🐞 Bug Fixes
+
 Situation	Commit Message
+
 Crash on null	fix: prevent crash when user data is null in Profile
 API issue	fix: handle undefined API response in Feed.jsx
 
 🔌 API & Backend
+
 Situation	Commit Message
+
 Fetch data	feat: integrate /getConnections API with Connections.jsx
 Loading UI	feat: show spinner while fetching posts
 
 📁 File Structure
+
 Situation	Commit Message
+
 Folder setup	chore: initial project structure with components and utils
 Add config	chore: add environment config files
 
 📄 Documentation
+
 Situation	Commit Message
+
 Create README	docs: add README with setup and usage
 Add API info	docs: document authentication and feed APIs
 
 ✅ Git Commit Type Reference
+
 Type	Use For...
+
 feat:	New features
 fix:	Bug fixes
 style:	CSS/formatting only
