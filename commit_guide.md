@@ -1,6 +1,6 @@
 ## ✅ Step-by-Step Git Workflow with Proper Commit Messages
 
-### 1. 🧱 Initialize Git Repository
+1. 🧱 Initialize Git Repository
 
 ```bash
 git init
