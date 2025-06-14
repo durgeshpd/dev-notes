@@ -4,22 +4,19 @@
 
 ```bash
 git init
+```
 2. 🚀 First Project Setup Commit
-bash
-Copy
-Edit
+```bash
 git add .
 git commit -m "chore: initial project setup with Vite and folder structure"
+```
 3. ⚙️ Commit Project Config Files
-bash
-Copy
-Edit
+```bash
 git add .gitignore vite.config.js eslint.config.js
 git commit -m "chore: add config files and ignore node_modules"
+```
 4. 📦 Commit Components (Individually or grouped logically)
-bash
-Copy
-Edit
+```bash
 # Navbar
 git add src/components/Navbar.jsx
 git commit -m "feat: add responsive Navbar component"
@@ -51,10 +48,9 @@ git commit -m "feat: show basic Profile information"
 # Premium
 git add src/components/Premium.jsx
 git commit -m "feat: add placeholder Premium section"
+```
 5. 🧠 Redux + Utilities
-bash
-Copy
-Edit
+```bash
 # Configure Redux Store
 git add src/utils/appStore.js
 git commit -m "feat: configure Redux store"
@@ -74,10 +70,9 @@ git commit -m "feat: setup socket.io client for real-time communication"
 # Define shared constants
 git add src/utils/constants.js
 git commit -m "chore: define global constants"
+```
 6. 🌐 Add App Entry & Routing
-bash
-Copy
-Edit
+```bash
 # Main app and entry point
 git add src/main.jsx src/App.jsx
 git commit -m "feat: setup main entry point and basic routing"
@@ -85,13 +80,14 @@ git commit -m "feat: setup main entry point and basic routing"
 # Styling
 git add src/style.css
 git commit -m "style: add global styles"
+```
 7. ☁️ Push to GitHub
-bash
-Copy
-Edit
+```bash
 git remote add origin <your-repo-url>
 git branch -M main
 git push -u origin main
+```
+
 🧠 Smart Commit Message Patterns by Situation
 🔐 Login & Auth
 Situation	Commit Message
