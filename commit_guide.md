@@ -1,20 +1,29 @@
 ## ✅ Step-by-Step Git Workflow with Proper Commit Messages
 
+---
+
 1. 🧱 Initialize Git Repository
 
 ```bash
 git init
 ```
+
+---
+
 2. 🚀 First Project Setup Commit
 ```bash
 git add .
 git commit -m "chore: initial project setup with Vite and folder structure"
 ```
+---
+
 3. ⚙️ Commit Project Config Files
 ```bash
 git add .gitignore vite.config.js eslint.config.js
 git commit -m "chore: add config files and ignore node_modules"
 ```
+---
+
 4. 📦 Commit Components (Individually or grouped logically)
 ```bash
 # Navbar
@@ -49,6 +58,8 @@ git commit -m "feat: show basic Profile information"
 git add src/components/Premium.jsx
 git commit -m "feat: add placeholder Premium section"
 ```
+---
+
 5. 🧠 Redux + Utilities
 ```bash
 # Configure Redux Store
@@ -71,6 +82,8 @@ git commit -m "feat: setup socket.io client for real-time communication"
 git add src/utils/constants.js
 git commit -m "chore: define global constants"
 ```
+---
+
 6. 🌐 Add App Entry & Routing
 ```bash
 # Main app and entry point
@@ -81,75 +94,157 @@ git commit -m "feat: setup main entry point and basic routing"
 git add src/style.css
 git commit -m "style: add global styles"
 ```
+---
+
 7. ☁️ Push to GitHub
 ```bash
 git remote add origin <your-repo-url>
 git branch -M main
 git push -u origin main
 ```
+---
 
 🧠 Smart Commit Message Patterns by Situation
 
-🔐 Login & Auth
+---
 
-Situation	Commit Message
+## 🐛 Bug Fixes
 
-Form + validation	feat: build Login form with input validation
-Auth integration	feat: connect login form to authentication API
-Handle errors	feat: display login error messages from API
-Fix login bug	fix: resolve issue where login fails with valid credentials
+| Scenario | Commit Message |
+|----------|----------------|
+| Button not clickable | `fix: make Submit button clickable after form validation` |
+| API returning undefined | `fix: handle undefined API response in Feed` |
+| Crash on null props | `fix: prevent crash when user data is null in Profile` |
+| Redux not updating | `fix: update userSlice to correctly dispatch login action` |
 
-🖼️ UI & Layout
+---
 
-Situation	Commit Message
+## 🔐 Login & Authentication
 
-New layout	feat: implement two-column layout for dashboard
-Style fix	style: fix alignment of profile card
-Mobile view	feat: make Feed component responsive on mobile
+| Scenario | Commit Message |
+|----------|----------------|
+| Create login form | `feat: design Login form UI with email/password fields` |
+| Add validation | `feat: add form validation for login credentials` |
+| Connect to backend | `feat: connect login form to authentication API` |
+| Fix login issue | `fix: resolve issue where login fails with valid credentials` |
+| Handle error UI | `feat: display login error messages from API` |
 
-⚙️ Redux State
+---
 
-Situation	Commit Message
+## 🖼️ UI & Layout Changes
 
-Create slice	feat: add requestSlice for managing friend requests
-Update reducer	fix: correct state mutation bug in userSlice
+| Scenario | Commit Message |
+|----------|----------------|
+| New layout | `feat: implement two-column layout for dashboard` |
+| Style fix | `style: fix alignment of profile card` |
+| Image/icon change | `chore: update app logo in Navbar` |
+| Make responsive | `feat: make Feed component responsive on mobile` |
+| CSS cleanup | `style: remove unused CSS classes in style.css` |
 
-🐞 Bug Fixes
+---
 
-Situation	Commit Message
+## ⚙️ Redux & State Management
 
-Crash on null	fix: prevent crash when user data is null in Profile
-API issue	fix: handle undefined API response in Feed.jsx
+| Scenario | Commit Message |
+|----------|----------------|
+| Add slice | `feat: add requestSlice for managing friend requests` |
+| Configure store | `feat: configure Redux store` |
+| Refactor logic | `refactor: simplify Redux store configuration` |
+| Fix mutation bug | `fix: avoid direct mutation in feed reducer` |
 
-🔌 API & Backend
+---
 
-Situation	Commit Message
+## 🔌 API Integration
 
-Fetch data	feat: integrate /getConnections API with Connections.jsx
-Loading UI	feat: show spinner while fetching posts
+| Scenario | Commit Message |
+|----------|----------------|
+| Add new call | `feat: integrate /getConnections API with Connections.jsx` |
+| Add loading state | `feat: show loading spinner while fetching posts` |
+| Fix headers | `fix: correct request headers in login API call` |
 
-📁 File Structure
+---
 
-Situation	Commit Message
+## 🔄 Refactor & Cleanup
 
-Folder setup	chore: initial project structure with components and utils
-Add config	chore: add environment config files
+| Scenario | Commit Message |
+|----------|----------------|
+| Rename component | `refactor: rename UserCard to ProfileCard for clarity` |
+| Remove console logs | `chore: remove debug logs from Chat component` |
+| Extract logic | `refactor: extract fetchUser into custom hook` |
 
-📄 Documentation
+---
 
-Situation	Commit Message
+## 🌐 Routing
 
-Create README	docs: add README with setup and usage
-Add API info	docs: document authentication and feed APIs
+| Scenario | Commit Message |
+|----------|----------------|
+| Add routing | `feat: setup React Router and initial routes` |
+| Add private routes | `feat: protect routes with authentication check` |
+| Handle 404 | `fix: add catch-all route to redirect unknown paths` |
 
-✅ Git Commit Type Reference
+---
 
-Type	Use For...
+## 🔥 Real-Time Features
 
-feat:	New features
-fix:	Bug fixes
-style:	CSS/formatting only
-refactor:	Code restructure (no logic change)
-chore:	Setup, config, maintenance
-docs:	Documentation
-test:	Testing-related
+| Scenario | Commit Message |
+|----------|----------------|
+| Socket setup | `feat: setup socket connection in socket.js` |
+| Chat handling | `feat: implement real-time messaging with sockets` |
+| Fix socket issue | `fix: correct event listener for incoming messages` |
+
+---
+
+## 📁 Project Structure & Setup
+
+| Scenario | Commit Message |
+|----------|----------------|
+| Initial setup | `chore: initial project setup with Vite and folder structure` |
+| .env support | `chore: load environment variables from .env` |
+| Git ignore | `chore: update .gitignore to exclude sensitive files` |
+
+---
+
+## 📄 Documentation
+
+| Scenario | Commit Message |
+|----------|----------------|
+| Create README | `docs: add project README with setup instructions` |
+| Add API docs | `docs: document available API endpoints` |
+| Update instructions | `docs: update README with feature roadmap` |
+
+---
+
+## 🧪 Testing
+
+| Scenario | Commit Message |
+|----------|----------------|
+| Add test | `test: add test for Navbar visibility logic` |
+| Fix test | `fix: update test case for feed reducer` |
+| Add test libs | `chore: install Jest and React Testing Library` |
+
+---
+
+## 🚀 Deployment
+
+| Scenario | Commit Message |
+|----------|----------------|
+| Build config | `chore: add build script for Vite` |
+| Hosting config | `chore: add config for Vercel deployment` |
+| Prod bug | `fix: resolve build issue for production deployment` |
+
+---
+
+## ✅ Commit Types Reference
+
+| Type       | Use For... |
+|------------|------------|
+| `feat`     | New features |
+| `fix`      | Bug fixes |
+| `style`    | CSS, formatting |
+| `refactor` | Code improvement (no behavior change) |
+| `chore`    | Config, setup, scripts |
+| `docs`     | Documentation |
+| `test`     | Tests |
+
+---
+
